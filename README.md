@@ -23,21 +23,21 @@ A continuación, para el primer despliegue ejecutamos los siguientes comandos, u
 
 **En la carpeta backend ejecutamos en consola los comandos:**
 
--	**composer install** (Instala compose, herramienta de gestión de dependencias de PHP).
--	**docker-compose up -d** (Crea el contenedor y levanta los servicios en Docker).
--	**php artisan migrate** (Ejecuta las migraciones en la base de datos).
--	**php artisan db:seed** --class=ClientesSeeder (Ejecuta el seeder que insertan en la base de datos 1000 clientes).
--	**php artisan db:seed** --class=ProgramadoresRiegoSeeder (Ejecuta el seeder que insertan en la base de datos 30.000 programadores de riego (30 por cliente)).
--	**php artisan db:seed** --class=SensoresSeeder (Ejecuta el seeder que insertan en la base de datos120.000 sensores (4 por cada programador de riego)).
--	**php artisan db:seed** --class=MedidasSeeder (Ejecuta el seeder que insertan en la base de datos1.200.000 medidas (1000 por cada sensor)).
+-	`composer install` (Instala compose, herramienta de gestión de dependencias de PHP).
+-	`docker-compose up -d` (Crea el contenedor y levanta los servicios en Docker).
+-	`php artisan migrate` (Ejecuta las migraciones en la base de datos).
+-	`php artisan db:seed` --class=ClientesSeeder (Ejecuta el seeder que insertan en la base de datos 1000 clientes).
+-	`php artisan db:seed` --class=ProgramadoresRiegoSeeder (Ejecuta el seeder que insertan en la base de datos 30.000 programadores de riego (30 por cliente)).
+-	`php artisan db:seed` --class=SensoresSeeder (Ejecuta el seeder que insertan en la base de datos120.000 sensores (4 por cada programador de riego)).
+-	`php artisan db:seed` --class=MedidasSeeder (Ejecuta el seeder que insertan en la base de datos1.200.000 medidas (1000 por cada sensor)).
 En este caso aconsejaría que se cambien en el seeder de clientes a 10, como venía en la especificación inicial antes del cambio, ya que, si no tarda muchísimo en ejecutar el seeder de medidas, aun una vez se hace funciona bien la aplicación.
 Se quedaría en 10 clientes, 300 programadores de riego (30 por cliente), 1.2000 sensores (4 por cada programador de riego) y 1.200.000 medidas (1000 por cada sensor).
 -	**php artisan serve** (Ejecuta el servidor de Laravel en http://127.0.0.1:8000).<br>
 
 **En la carpeta fronted ejecutamos en consola los comandos:**
 
--	**mpm install** (Instala npm, el gestor de paquetes por defecto de Node.js).
--	**ng serve** (Ejecuta el servidor de Angular en http://localhost:4200/).
+-	`mpm install` (Instala npm, el gestor de paquetes por defecto de Node.js).
+-	`ng serve` (Ejecuta el servidor de Angular en http://localhost:4200/).
 ### Accesos
 -	Url del Frontend:
 http://localhost:4200/
