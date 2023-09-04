@@ -17,7 +17,7 @@ class SensoresSeeder extends Seeder
     public function run()
     {
         $programadoresRiego = ProgramadorRiego::all();
-        $sensores = ['S1', 'S2', 'S3', 'S4'];
+        $sensores = ['S1', 'S2', 'S3', 'S4']; // 4 sensores por programador
 
         foreach ($programadoresRiego as $programadorRiego) {
             foreach ($sensores as $sensor) {

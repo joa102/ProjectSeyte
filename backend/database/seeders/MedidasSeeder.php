@@ -32,7 +32,7 @@ class MedidasSeeder extends Seeder
                     'sensor_id' => $sensor->id,
                 ]);
                 $contador++;
-                if ($contador >= 10) {
+                if ($contador >= 1000) {
                     break; // 1000 medidas por sensor
                 }
             }
