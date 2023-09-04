@@ -1,0 +1,92 @@
+<mat-card class="m-2 d-flex justify-content-between align-items-center">
+    <h2 class="mb-0">{{ titulo }}</h2>
+</mat-card>
+
+<mat-card class="m-2">
+
+    <div class="animated fadeIn faster">
+
+        <form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()" class="form-floating mb-3">
+
+            <div class="row p-4">
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Código</mat-label>
+                        <input matInput aria-label="codigo" formControlName="codigo" required>
+                        <mat-error>El campo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Razón social</mat-label>
+                        <input matInput aria-label="razon_social" formControlName="razon_social" required>
+                        <mat-error>El campo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>CIF</mat-label>
+                        <input matInput aria-label="cif" formControlName="cif" required>
+                        <mat-error *ngIf="getError('cif','serverError')">{{ getError('cif','serverError') }}</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Dirección</mat-label>
+                        <input matInput aria-label="direccion" formControlName="direccion" required>
+                        <mat-error>El campo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Municipio</mat-label>
+                        <input matInput aria-label="municipio" formControlName="municipio" required>
+                        <mat-error>El campo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Provincia</mat-label>
+                        <input matInput aria-label="provincia" formControlName="provincia" required>
+                        <mat-error>El campo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Fecha inicio contrato</mat-label>
+                        <input matInput aria-label="fecha_inicio_contrato" [matDatepicker]="pickerFIC" formControlName="fecha_inicio_contrato">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="pickerFIC"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerFIC></mat-datepicker>
+                        <mat-error>El campo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Fecha expiración contrato</mat-label>
+                        <input matInput aria-label="fecha_expiracion_contrato" [matDatepicker]="pickerFEC" formControlName="fecha_expiracion_contrato">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="pickerFEC"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerFEC></mat-datepicker>
+                        <mat-error>El campo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" mat-flat-button color="primary">{{ boton }}</button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</mat-card>

@@ -1,0 +1,8 @@
+<mat-card class="m-2" style="box-shadow: none;">
+    <div class="text-center error">
+        <mat-icon [ngClass]="data.class" aria-hidden="false" aria-label="Error">{{data.icon}}</mat-icon>
+        <h2>{{data.title}}</h2>
+        <p>{{data.text}}</p>
+        <button mat-button [mat-dialog-close]="data.text" color="primary" cdkFocusInitial>Cerrar</button>
+    </div>
+</mat-card>

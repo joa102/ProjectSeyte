@@ -1,0 +1,64 @@
+<mat-card class="m-2 d-flex justify-content-between align-items-center">
+    <h2 class="mb-0">Crear programador de riego</h2>
+</mat-card>
+
+<mat-card class="m-2">
+
+    <div class="animated fadeIn faster">
+
+        <form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()" class="form-floating mb-3">
+
+            <div class="row p-4">
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Modelo</mat-label>
+                        <mat-select formControlName="modelo">
+                            <mat-option value="A">A</mat-option>
+                            <mat-option value="B">B</mat-option>
+                            <mat-option value="C">C</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Número de serie</mat-label>
+                        <input matInput aria-label="numero_serie" formControlName="numero_serie" required>
+                        <mat-hint>######</mat-hint>
+                        <mat-error>El campo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Fecha de alta</mat-label>
+                        <input matInput aria-label="fecha_alta" [matDatepicker]="pickerFA" formControlName="fecha_alta">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="pickerFA"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerFA></mat-datepicker>
+                        <mat-error>El campo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Fecha de última conexión</mat-label>
+                        <input matInput aria-label="fecha_ultima_conexion" [matDatepicker]="pickerFUC" formControlName="fecha_ultima_conexion">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="pickerFUC"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerFUC></mat-datepicker>
+                        <mat-error>El campo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" mat-flat-button color="primary">Crear</button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</mat-card>

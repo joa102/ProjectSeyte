@@ -1,0 +1,41 @@
+<mat-card class="m-2 d-flex justify-content-between align-items-center">
+    <h2 class="mb-0">Crear programador de riego</h2>
+</mat-card>
+
+<mat-card class="m-2">
+
+    <div class="animated fadeIn faster">
+
+        <form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()" class="form-floating mb-3">
+
+            <div class="row p-4">
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Fecha-Hora de la medida</mat-label>
+                        <input matInput aria-label="fecha_hora_medida" [matDatepicker]="pickerFHM" formControlName="fecha_hora_medida">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="pickerFHM"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerFHM></mat-datepicker>
+                        <mat-error>El campo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Valor</mat-label>
+                        <input matInput aria-label="valor" formControlName="valor" required>
+                        <mat-error>El campo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" mat-flat-button color="primary">Crear</button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</mat-card>
