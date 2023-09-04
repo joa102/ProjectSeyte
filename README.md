@@ -20,7 +20,9 @@ Debemos tener instalado Docker junto con Docker compose.
 ### Despliegue
 En el primer lugar debemos crear el fichero .env en la carpeta backend que contenga las credenciales a la base de datos, ya que en ese fichero están las credenciales y no se sube al repositorio de git.<br>
 A continuación, para el primer despliegue ejecutamos los siguientes comandos, uno detrás de otro:<br>
+
 **En la carpeta backend ejecutamos en consola los comandos:**
+
 -	**composer install** (Instala compose, herramienta de gestión de dependencias de PHP).
 -	**docker-compose up -d** (Crea el contenedor y levanta los servicios en Docker).
 -	**php artisan migrate** (Ejecuta las migraciones en la base de datos).
@@ -31,7 +33,9 @@ A continuación, para el primer despliegue ejecutamos los siguientes comandos, u
 En este caso aconsejaría que se cambien en el seeder de clientes a 10, como venía en la especificación inicial antes del cambio, ya que, si no tarda muchísimo en ejecutar el seeder de medidas, aun una vez se hace funciona bien la aplicación.
 Se quedaría en 10 clientes, 300 programadores de riego (30 por cliente), 1.2000 sensores (4 por cada programador de riego) y 1.200.000 medidas (1000 por cada sensor).
 -	**php artisan serve** (Ejecuta el servidor de Laravel en http://127.0.0.1:8000).<br>
+
 **En la carpeta fronted ejecutamos en consola los comandos:**
+
 -	**mpm install** (Instala npm, el gestor de paquetes por defecto de Node.js).
 -	**ng serve** (Ejecuta el servidor de Angular en http://localhost:4200/).
 ### Accesos
