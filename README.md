@@ -28,8 +28,8 @@ A continuación, para el primer despliegue ejecutamos los siguientes comandos, u
 -	`php artisan migrate` (Ejecuta las migraciones en la base de datos).
 -	`php artisan db:seed --class=ClientesSeeder` (Ejecuta el seeder que insertan en la base de datos 1000 clientes).
 -	`php artisan db:seed --class=ProgramadoresRiegoSeeder` (Ejecuta el seeder que insertan en la base de datos 30.000 programadores de riego (30 por cliente)).
--	`php artisan db:seed --class=SensoresSeeder` (Ejecuta el seeder que insertan en la base de datos120.000 sensores (4 por cada programador de riego)).
--	`php artisan db:seed --class=MedidasSeeder` (Ejecuta el seeder que insertan en la base de datos1.200.000 medidas (1000 por cada sensor)).
+-	`php artisan db:seed --class=SensoresSeeder` (Ejecuta el seeder que insertan en la base de datos 120.000 sensores (4 por cada programador de riego)).
+-	`php artisan db:seed --class=MedidasSeeder` (Ejecuta el seeder que insertan en la base de datos 1.200.000 medidas (1000 por cada sensor)).
 En este caso aconsejaría que se cambien en el seeder de clientes a 10, como venía en la especificación inicial antes del cambio, ya que, si no tarda muchísimo en ejecutar el seeder de medidas, aun una vez se hace funciona bien la aplicación.
 Se quedaría en 10 clientes, 300 programadores de riego (30 por cliente), 1.2000 sensores (4 por cada programador de riego) y 1.200.000 medidas (1000 por cada sensor).
 -	`php artisan serve` (Ejecuta el servidor de Laravel en http://127.0.0.1:8000).<br>
