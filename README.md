@@ -1,6 +1,5 @@
 # ProjectSeyte
-### Requisitos
-Tecnologías utilizadas
+###Tecnologías utilizadas
 -	**Docker y Docker Compose**
 -	**Backend:** Api REST con Laravel 9.52.15
 -	**Frontend:** Angular 16.2.0
