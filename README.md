@@ -43,5 +43,5 @@ Se quedaría en 10 clientes, 300 programadores de riego (30 por cliente), 1.2000
 http://localhost:4200/
 -	Acceso a la base de datos con phpMyAdmin:
 http://localhost:8082/index.php?route=/database/structure&db=laravel
--	Url de la API es:
+-	Url del Api REST:
 http://127.0.0.1:8000/api/
