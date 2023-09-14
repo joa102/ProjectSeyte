@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog } from "@angular/material/dialog";
 import { DialogComponent } from "../../../../shared/dialog/dialog.component";
+
 import { MedidaService } from '../../services/medida.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class MedidaFormularioComponent implements OnInit {
   public status: boolean;
   pickerFHM!:Date;
   fecha_hora_medida!:String;
-  sensor_id!: number;
+  idSensor!: number;
 
   constructor(
     private fb: FormBuilder,
@@ -50,25 +51,25 @@ export class MedidaFormularioComponent implements OnInit {
         });
       }
 
-      this.sensor_id  = parseInt(this.router.url.split('/')[2], 10);
+      this.idSensor  = parseInt(this.router.url.split('/')[2], 10);
 
       this.pickerFHM = this.forma.get('fecha_hora_medida')?.value;
 
       this.forma.value.fecha_hora_medida = this.fecha_hora_medida = this.pickerFHM.getFullYear() + '-' + (this.pickerFHM.getMonth() + 1) + '-' + this.pickerFHM.getDate();
 
       this.medida = this.forma.value;
-      this.medida.sensor_id = this.sensor_id;
+      this.medida.sensor_id = this.idSensor;
 
       this.peticionesService.addMedida(this.medida).subscribe( res => {
 
           this.status =true;
 
           const dialogRef = this.dialog.open(DialogComponent, {
-            data: {title: 'Medida creado correctamente', icon: "check_circle_outline", class: "text-success"},
+            data: {title: 'Medida creada correctamente', icon: "check_circle_outline", class: "text-success"},
           });
           dialogRef.afterClosed().subscribe();
 
-          this.router.navigate(['/medidas/'+this.sensor_id])
+          this.router.navigate(['/medidas/'+this.idSensor])
       },
       error => {
 

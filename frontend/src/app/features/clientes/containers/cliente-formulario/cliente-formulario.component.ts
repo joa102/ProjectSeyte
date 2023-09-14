@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog } from "@angular/material/dialog";
 import { DialogComponent } from "../../../../shared/dialog/dialog.component";
+
 import { ClienteService } from '../../services/cliente.service';
 
 @Component({
@@ -37,13 +38,28 @@ export class ClienteFormularioComponent implements OnInit {
     this.createForm();
     if(this.idCliente){
       this.getCliente();
+      this.createFormUpdate();
       this.titulo = "Editar cliente";
       this.boton = "Editar";
     }
   }
 
-  createForm () {
+  createForm() {
     this.forma = this.fb.group({
+      codigo : ['', [ Validators.required ] ],
+      razon_social : ['', [ Validators.required ] ],
+      cif : ['', Validators.required],
+      direccion : ['', Validators.required ],
+      municipio: ['', Validators.required],
+      provincia: ['', Validators.required],
+      fecha_inicio_contrato : [null, Validators.required],
+      fecha_expiracion_contrato : [null, Validators.required]
+    });
+  }
+
+  createFormUpdate() {
+    this.forma = this.fb.group({
+      id : ['', [ Validators.required ] ],
       codigo : ['', [ Validators.required ] ],
       razon_social : ['', [ Validators.required ] ],
       cif : ['', Validators.required],
@@ -116,7 +132,7 @@ export class ClienteFormularioComponent implements OnInit {
   }
 
   update() {
-    this.peticionesService.updateCliente(this.cliente).subscribe( res => {
+    this.peticionesService.updateCliente(this.forma.value).subscribe( res => {
       this.status =true;
 
       const dialogRef = this.dialog.open(DialogComponent, {
@@ -154,6 +170,7 @@ export class ClienteFormularioComponent implements OnInit {
         this.cliente = data;
 
         this.forma.patchValue({
+          id: this.cliente.id,
           codigo: this.cliente.codigo,
           razon_social: this.cliente.razon_social,
           cif: this.cliente.cif,

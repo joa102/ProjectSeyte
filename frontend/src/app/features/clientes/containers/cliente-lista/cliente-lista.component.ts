@@ -5,8 +5,8 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
-import { ClienteService } from '../../services/cliente.service';
 
+import { ClienteService } from '../../services/cliente.service';
 import { Cliente } from '../../models/cliente';
 
 @Component({

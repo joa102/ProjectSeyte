@@ -5,8 +5,8 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
-import { SensorService } from '../../services/sensor.service';
 
+import { SensorService } from '../../services/sensor.service';
 import { Sensor } from '../../models/sensor';
 
 @Component({

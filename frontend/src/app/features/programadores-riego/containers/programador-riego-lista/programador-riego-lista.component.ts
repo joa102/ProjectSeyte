@@ -5,10 +5,9 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
+
 import { ProgramadorRiegoService } from '../../services/programador-riego.service';
-
 import { ProgramadorRiego } from '../../models/programador-riego';
-
 
 @Component({
   selector: 'app-programador-riego-lista',

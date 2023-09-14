@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog } from "@angular/material/dialog";
 import { DialogComponent } from "../../../../shared/dialog/dialog.component";
+
 import { SensorService } from '../../services/sensor.service';
 
 @Component({
@@ -63,17 +64,15 @@ export class SensorFormularioComponent implements OnInit {
         this.router.navigate(['/sensores/'+this.idProgramadorRiego])
     },
     error => {
-      console.log(error);
       const dialogRef = this.dialog.open(DialogComponent, {
         data: {title: 'Error al crear sensor', text: 'Faltan campos obligatorios por insertar', icon: "highlight_off", class: "text-danger"},
       });
       dialogRef.afterClosed().subscribe();
 
-      if (error && error.error && error.error.errors) {
-        Object.entries(error.error.errors).forEach(([inputName, errorMsg]) => {
-          this.forma.get(inputName)?.setErrors({ serverError: errorMsg });
-        });
-      }
+      Object.entries(error.error.errors).forEach(([inputName,error])=>{
+          this.forma.get(inputName)?.setErrors({serverError:error})
+        }
+      );
     });
 
   }

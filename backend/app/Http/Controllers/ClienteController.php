@@ -143,19 +143,4 @@ class ClienteController extends Controller
         return $cliente;
     }
 
-    protected function validateCliente(){
-
-        return request()->validate([
-            'codigo' => 'required',
-            'razon_social' => 'required',
-            'cif' => ['required', 'min:9', 'max:12'],
-            'direccion' => 'required',
-            'municipio' => 'required',
-            'provincia' => 'required',
-            'fecha_inicio_contrato' => 'required',
-            'fecha_expiracion_contrato' => 'required'
-        ]);
-
-    }
-
 }
